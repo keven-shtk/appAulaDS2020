@@ -2,4 +2,4 @@
 
 require('config.php');
 
-$conexao = mysqli_connect(DBHOST, DBUSER, DBPASSMORD, DBNAME);
+$conexao = mysqli_connect(DBHOST, DBUSER, DBPASSWORD, DBNAME);
