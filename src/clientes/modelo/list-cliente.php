@@ -8,7 +8,7 @@
 
         $colunas = $requestData['columns'];
 
-        $sql = "SELECT idcliente, nome, email, telefone, date_format(datamodificacao,'%d/%m/%Y %H:%i:%s') as datamodificacao, ativo FROM clientes WHERE 1=1 ";
+        $sql = "SELECT idcliente, nome, email, telefone, ativo, date_format(datamodificacao,'%d/%m/%Y %H:%i:%s') as datamodificacao FROM clientes WHERE 1=1 ";
         $resultado = mysqli_query($conexao, $sql);
         $qtdeLinhas = mysqli_num_rows($resultado);
 

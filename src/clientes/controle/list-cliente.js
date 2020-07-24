@@ -26,10 +26,6 @@ $(document).ready(function() {
                 "className": "text-center"
             },
             {
-                "data": "datamodificacao",
-                "className": "text-center"
-            },
-            {
                 "data": "ativo",
                 "orderable": false,
                 "serchable": false,
@@ -37,6 +33,11 @@ $(document).ready(function() {
                 "render": function(data, type, row, meta) {
                     return data == 'S' ? 'Ativo' : 'Não Ativo'
                 }
+            },
+            
+            {
+                "data": "datamodificacao",
+                "className": "text-center"
             },
             {
                 "data": "idcliente",
