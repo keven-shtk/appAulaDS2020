@@ -4,27 +4,29 @@
 
     if($conexao){
 
+        $requestData = $_REQUEST;
 
-        $sql = "SELECT idcategoria, nome FROM categorias WHERE ativo = 'S' ";
+        $id = isset($requestData['idcliente']) ? $requestData['idcliente'] : '';
+
+        $sql = "SELECT * FROM clientes WHERE idcliente = $id ";
         $resultado = mysqli_query($conexao, $sql);
 
         if($resultado && mysqli_num_rows($resultado) > 0){
-            
-            $dadosCategoria = array();
+
             while($linha = mysqli_fetch_assoc($resultado)){
-                $dadosCategoria[] = array_map('utf8_encode', $linha);
+                $dadosCliente= array_map('utf8_encode', $linha);
             }
 
             $dados = array(
                 "tipo" =>"success",
                 "mensagem" => "",
-                "dados" => $dadosCategoria
+                "dados" => $dadosCliente
             );
 
         } else{
             $dados = array(
                 "tipo" => "info",
-                "mensagem" => "Não foi possível localizar a categoria.",
+                "mensagem" => "Não possível localizar O cliente.",
                 "dados" => array()
             );
         }

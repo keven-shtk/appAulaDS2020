@@ -26,7 +26,7 @@
         } else{
             $dados = array(
                 "tipo" => "info",
-                "mensagem" => "Não possível localizar a categoria.",
+                "mensagem" => "Não foi possível localizar a categoria.",
                 "dados" => array()
             );
         }
