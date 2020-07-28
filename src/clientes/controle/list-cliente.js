@@ -18,11 +18,7 @@ $(document).ready(function() {
                 "className": "text-center"
             },
             {
-                "data": "email",
-                "className": "text-center"
-            },
-            {
-                "data": "telefone",
+                "data": "datamodificacao",
                 "className": "text-center"
             },
             {
@@ -33,11 +29,6 @@ $(document).ready(function() {
                 "render": function(data, type, row, meta) {
                     return data == 'S' ? 'Ativo' : 'Não Ativo'
                 }
-            },
-            
-            {
-                "data": "datamodificacao",
-                "className": "text-center"
             },
             {
                 "data": "idcliente",
@@ -54,4 +45,4 @@ $(document).ready(function() {
             }
         ]
     })
-})
+  })
