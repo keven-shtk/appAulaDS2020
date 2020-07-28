@@ -25,12 +25,12 @@
             if($resultado){
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Categoria alterada com sucesso."
+                    "mensagem" => " Cliente alterado com sucesso."
                 );
             } else {
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => mysqli_error($conexao) //"Não foi possível altarar a categoria."
+                    "mensagem" => mysqli_error($conexao) 
                 );
             }
         }

@@ -18,11 +18,7 @@ if(!$conexao){
         );
     } else {
 
-        //$requestData = array_map('utf8_decode', $requestData);
-
         $requestData['ativo'] = $requestData['ativo'] == "on" ? "S" : "N";
-
-        //$requestData['dataagora'] = date('Y-d-m H:i:s', strtotime($requestData['dataagora']));
 
         $date = date_create_from_format('d/m/Y H:i:s', $requestData['dataagora']);
         $requestData['dataagora'] = date_format($date, 'Y-m-d H:i:s');

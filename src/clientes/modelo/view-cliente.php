@@ -26,7 +26,7 @@
         } else{
             $dados = array(
                 "tipo" => "info",
-                "mensagem" => "Não possível localizar O cliente.",
+                "mensagem" => "Não possível localizar o cliente.",
                 "dados" => array()
             );
         }
@@ -36,7 +36,7 @@
     } else{
         $dados = array(
             "tipo" => "error",
-            "mensagem" => "Não possível conecar ao banco de dados",
+            "mensagem" => "Não possível conectar ao banco de dados",
             "dados" => array()
         );
     }
