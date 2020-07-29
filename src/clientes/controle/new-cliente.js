@@ -15,6 +15,7 @@ $(document).ready(function() {
         })
 
         $('.btn-save').show()
+        $('.btn-update').hide()
 
         $('#modal-cliente').modal('show')
     })
