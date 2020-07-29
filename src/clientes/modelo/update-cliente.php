@@ -18,14 +18,14 @@
             $date = date_create_from_format('d/m/Y H:i:s', $requestData['dataagora']);
             $requestData['dataagora'] = date_format($date, 'Y-m-d H:i:s');
 
-            $sql = "UPDATE clientes SET nome = '$requestData[nome]', '$requestData[email]', '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[dataagora]' WHERE idcliente = $id ";
+            $sql = "UPDATE clientes SET nome = '$requestData[nome]', email = '$requestData[email]', telefone = '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[dataagora]' WHERE idcliente = $id ";
 
             $resultado = mysqli_query($conexao, $sql);
 
             if($resultado){
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => " Cliente alterado com sucesso."
+                    "mensagem" => "Cliente alterado com sucesso."
                 );
             } else {
                 $dados = array(
