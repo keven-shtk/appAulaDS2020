@@ -18,7 +18,7 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: idcategoria,
+                    data: idcliente,
                     url: 'src/clientes/modelo/delete-cliente.php',
                     success: function(dados) {
                         Swal.fire({

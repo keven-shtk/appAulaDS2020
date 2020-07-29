@@ -15,7 +15,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/cliente/modelo/create-cliente.php',
+            url: 'src/clientes/modelo/create-cliente.php',
             success: function(dados) {
                 Swal.fire({
                     title: 'appAulaDS',

@@ -30,7 +30,7 @@
             } else {
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => mysqli_error($conexao) //"Não foi possível altarar a categoria."
+                    "mensagem" => mysqli_error($conexao) 
                 );
             }
         }

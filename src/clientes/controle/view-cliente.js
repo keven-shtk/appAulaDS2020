@@ -18,7 +18,7 @@ $(document).ready(function() {
             url: 'src/clientes/modelo/view-cliente.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
-                    $('.modal-body').load('src/cliente/visao/form-cliente.html', function() {
+                    $('.modal-body').load('src/clientes/visao/form-cliente.html', function() {
                         $('#nome').val(dado.dados.nome)
                         $('#nome').attr('readonly', 'true')
                         $('#email').val(dado.dados.email)

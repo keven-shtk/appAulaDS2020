@@ -6,7 +6,7 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-tile').append('Visualização de categoria')
+        $('.modal-title').append('Visualização de categoria')
 
         let idcategoria = `idcategoria=${$(this).attr('id')}`
 
@@ -21,9 +21,17 @@ $(document).ready(function() {
                     $('.modal-body').load('src/categorias/visao/form-categoria.html', function() {
                         $('#nome').val(dado.dados.nome)
                         $('#nome').attr('readonly', 'true')
-                        $('#dataagora').val(dado.dados.nome)
-                        $('#ativo').val(dado.dados.ativo)
+                        $('#dataagora').val(dado.dados.datacriacao)
+
+                        if (dado.dados.ativo == "N") {
+                            $('#ativo').removeAttr('checked')
+                        }
+
+                        $('#ativo').attr('readolnly', 'true')
+
                     })
+                    $('.btn-save').hide()
+                    $('.btn-update').hide()
                     $('#modal-categoria').modal('show')
                 } else {
                     Swal.fire({
