@@ -25,7 +25,9 @@
             if($resultado){
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Cliente alterado com sucesso."
+
+                   // "mensagem" => "Cliente alterado com sucesso.",
+                   "mensagem" => mysqli_error($requestData['dataagora'])
                 );
             } else {
                 $dados = array(

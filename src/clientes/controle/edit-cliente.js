@@ -20,6 +20,8 @@ $(document).ready(function() {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/clientes/visao/form-cliente.html', function() {
                         $('#nome').val(dado.dados.nome)
+                        $('#email').val(dado.dados.email)
+                        $('#telefone').val(dado.dados.telefone)
                         $('#dataagora').val(dado.dados.datacriacao)
 
                         if (dado.dados.ativo == "N") {
