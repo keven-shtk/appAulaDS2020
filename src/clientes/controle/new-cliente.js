@@ -1,4 +1,4 @@
-$(document).ready(function() {
+(document).ready(function() {
     $('.btn-new').click(function(e) {
         e.preventDefault()
 
@@ -14,6 +14,7 @@ $(document).ready(function() {
         })
 
         $('.btn-save').show()
+        $('.btn-update').hide()
 
         $('#modal-cliente').modal('show')
     })

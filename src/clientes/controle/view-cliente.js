@@ -6,7 +6,7 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-tile').append('Visualização de cliente')
+        $('.modal-title').append('Visualização do cliente')
 
         let idcliente = `idcliente=${$(this).attr('id')}`
 
@@ -18,12 +18,24 @@ $(document).ready(function() {
             url: 'src/clientes/modelo/view-cliente.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
-                    $('.modal-body').load('src/clientes/visao/form-cliente.html', function() {
+                    $('.modal-body').load('src/cliente/visao/form-cliente.html', function() {
                         $('#nome').val(dado.dados.nome)
                         $('#nome').attr('readonly', 'true')
-                        $('#dataagora').val(dado.dados.nome)
-                        $('#ativo').val(dado.dados.ativo)
+                        $('#email').val(dado.dados.email)
+                        $('#email').attr('readonly', 'true')
+                        $('#telefone').val(dado.dados.telefone)
+                        $('#telefone').attr('readonly', 'true')
+                        $('#dataagora').val(dado.dados.datacriacao)
+
+                        if (dado.dados.ativo == "N") {
+                            $('#ativo').removeAttr('checked')
+                        }
+
+                        $('#ativo').attr('readolnly', 'true')
+
                     })
+                    $('.btn-save').hide()
+                    $('.btn-update').hide()
                     $('#modal-cliente').modal('show')
                 } else {
                     Swal.fire({
