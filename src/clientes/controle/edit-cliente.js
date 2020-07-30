@@ -22,7 +22,8 @@ $(document).ready(function() {
                         $('#nome').val(dado.dados.nome)
                         $('#email').val(dado.dados.email)
                         $('#telefone').val(dado.dados.telefone)
-                        $('#dataagora').val(dado.dados.datacriacao)
+                        const datamodificacao = new Date().toLocaleString()
+                        $('#dataagora').val(datamodificacao)
 
                         if (dado.dados.ativo == "N") {
                             $('#ativo').removeAttr('checked')

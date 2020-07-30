@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.btn-new').click(function(e) {
-        e.preventDefault(e)
+        e.preventDefault()
         /*alert('teste');*/
 
         $('.modal-title').empty()

@@ -8,7 +8,7 @@
 
         $id = isset($requestData['idcliente']) ? $requestData['idcliente'] : '';
 
-        $sql = "SELECT * FROM clientes WHERE idcliente = $id ";
+        $sql = "SELECT idcliente, nome, email, telefone, ativo, date_format(datacriacao, '%d/%m/%Y %H:%i:%s') as datacriacao, date_format(datacriacao, '%d/%m/%Y %H:%i:%s') as datamodificacao FROM clientes WHERE idcliente = $id ";
         $resultado = mysqli_query($conexao, $sql);
 
         if($resultado && mysqli_num_rows($resultado) > 0){

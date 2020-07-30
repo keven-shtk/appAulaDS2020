@@ -15,10 +15,10 @@
             $id = isset($requestData['idcliente']) ? $requestData['idcliente'] : '';
             $requestData['ativo'] = $requestData['ativo'] == "on" ? "S" : "N";
 
-            $date = date_create_from_format('Y-m-d H:i:s', $requestData['dataagora']);
-            $requestData['dataagora'] = date_format($date, 'Y-m-d H:i:s');
+            $date = date_create_from_format('d/m/Y H:i:s', $requestData['datamodificacao']);
+            $requestData['datamodificacao'] = date_format($date, 'Y-m-d H:i:s');
 
-            $sql = "UPDATE clientes SET nome = '$requestData[nome]',email = '$requestData[email]',telefone = '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[dataagora]' WHERE idcliente = $id ";
+            $sql = "UPDATE clientes SET nome = '$requestData[nome]',email = '$requestData[email]',telefone = '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[datamodificaca]' WHERE idcliente = $id ";
 
             $resultado = mysqli_query($conexao, $sql);
 
