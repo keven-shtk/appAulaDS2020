@@ -15,26 +15,22 @@
             $id = isset($requestData['idcliente']) ? $requestData['idcliente'] : '';
             $requestData['ativo'] = $requestData['ativo'] == "on" ? "S" : "N";
 
-           
             $date = date_create_from_format('Y-m-d H:i:s', $requestData['dataagora']);
-            $requestData['dataagora'] = date_format($date, 'd-m-Y H:i:s');
+            $requestData['dataagora'] = date_format($date, 'Y-m-d H:i:s');
 
-            var_dump($requestData);
-            
-            $sql = "UPDATE clientes SET nome = '$requestData[nome]', email = '$requestData[email]', telefone = '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[dataagora]' WHERE idcliente = $id ";
-      
-           $resultado = mysqli_query($conexao, $sql);
+            $sql = "UPDATE clientes SET nome = '$requestData[nome]',email = '$requestData[email]',telefone = '$requestData[telefone]', ativo = '$requestData[ativo]', datamodificacao = '$requestData[dataagora]' WHERE idcliente = $id ";
+
+            $resultado = mysqli_query($conexao, $sql);
 
             if($resultado){
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Cliente alterado com sucesso.",
-                    
+                    "mensagem" => "Cliente alterado com sucesso."
                 );
             } else {
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => mysqli_error($conexao) 
+                    "mensagem" => "Não foi possivel alterar o Cliente".mysqli_error($conexao)
                 );
             }
         }
@@ -48,4 +44,4 @@
         );
     }
 
-   echo json_encode($dados, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+   echo json_encode($dados, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); 
