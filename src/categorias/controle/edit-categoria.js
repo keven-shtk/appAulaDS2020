@@ -20,7 +20,8 @@ $(document).ready(function() {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/categorias/visao/form-categoria.html', function() {
                         $('#nome').val(dado.dados.nome)
-                        $('#dataagora').val(dado.dados.datacriacao)
+                        const datamodificacao = new Date().toLocaleString()
+                        $('#dataagora').val(datamodificacao)
 
                         if (dado.dados.ativo == "N") {
                             $('#ativo').removeAttr('checked')
